@@ -84,7 +84,7 @@ U.S. Marine Corps command structure ⚓
 
 ---
 
-##Maintainer
+## Maintainer
 
 **Maurce Trammell**
 zmauricetrammell on GitHub
