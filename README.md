@@ -51,3 +51,42 @@ Outputs: TaskReport, Help, Action (Move, Dash, Chop, Pass, Pick Up ...)
 Inputs: AssignTask (Serve, Fetch, Wash), State Matrix  
 Outputs: TaskReport, Help, Action (Move, Dash, Pass, Pick Up, Wash ...)  
 
+---
+
+## Hardware Setup
+Component	Quantity	Function  
+
+Jetson Orin Nano (8 GB)	1	CV + Sous Chef Planner  
+
+Raspberry Pi 5	2–4	Agent Nodes (Commis/Porter)  
+
+Arduino Pro Micro (32U4)	2–4	HID controller emulation  
+
+Powered USB Hub	1	Connects Arduinos to Switch Dock  
+
+HDMI Capture Card (USB3)	1	Ingests Switch video feed  
+
+HDMI Splitter	1	Pass-through to display + capture  
+
+Switch Dock	1	Main game host  
+
+---
+
+## Inspiration
+
+Escoffier’s Kitchen Brigade
+
+Overcooked! series
+
+Distributed robotics and Swarm AI
+
+U.S. Marine Corps command structure ⚓
+
+---
+
+##Maintainer
+
+**Maurce Trammell**
+zmauricetrammell on GitHub
+
+“Building smarter kitchens, one Pi at a time.”
