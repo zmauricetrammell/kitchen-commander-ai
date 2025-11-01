@@ -70,7 +70,7 @@ If all this is done perfectly, this system will see the game in real time, under
 
 ## Execution:
 
-### Log 01Nov2025
+### Development Log 01Nov2025
 I'll start by working on Subsystem 1, the perception system while I wait for the all of the materials to come in.
       
    
