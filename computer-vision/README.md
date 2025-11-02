@@ -20,4 +20,25 @@ The output is a light weight game state data structure thats easy to parse.
 
 ## Execution
 
+### Log 01 November 2025
+I have more questions than answers at this point. I intend to use the "YOLO" object detection model for this project because it is open source, relatively light weight, lightning fast, and very accurate. I want to do this myself and control the quality of the model to eliminate errors in the overall complex system so I want to train a model on a custom data set I collect, manage, and label myself. I also want to test and compare the parameters in the different generations, sizes, and training choices between each model to balance performance, speed and size.  
+
+Up front, I have these questions:
+1. How can I collect data for overcooked and label it to train and test a YOLO model?
+2. Which YOLO model has the best performance, size, speed balance for my project constraints?
+3. How can I implement a smooth training pipeline that isnt compute intensive and slow?
+
+I found this awesome tutorial video for a smaller project: https://youtu.be/r0RspiLG260?si=4l_HoHRc8aW-lMRC (Credit to Edje Electronics). It makes use of Google Colab. This is a great option to reduce my compute requirements. I can aggregate a dataset, train a model, and test it all in a Colab notebook without needing to tax my own hardware and manage a bunch of dependencies.
+
+**Starting My Dataset**  
+I'll start with collecting data for a dataset. How big should it be? Reddit and Stack Overflow seems to suggest 1000 - 1500 minimum for each class (this will be very time intensive and laborious, let's see if there are any optimizations or if I can come up with a quick and efficient workflow).
+
+I'll start with 100-200 images for each class. I'll pull them directly from the game video stream. Since I'll be working with the dataset in the cloud, I'll collect it in cloud storage in Google Drive.
+
+#### Goal - Collect Images of Overcooked For An Image Dataset  
+I'll collect at least 100 images of each of the classes I want to detect.
+
+First, I need to delineate all of the classes so that I know what I need to collect images of. I'll make a classes.txt list of classes.
+
+
 ## Reflection
