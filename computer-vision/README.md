@@ -4,11 +4,11 @@
 The goal of this subsystem is to perceive and understand the current game state in near real time. The input will be a video stream of the game. The output will be a game state matrix representing the current game state.
 
 ## Success Critera
-[] Must take in live video stream from the game.
-[] Must be able to detect and track all interactable or relevant objects in the game 99% of the view time.
-[] Must process faster than or equal to human perception (30 FPS).
-[] No modifications can be made to the game platform or hosted device.
-[] Must be deployable on an embedded GPU system.
+- [ ] Must take in live video stream from the game.
+- [ ] Must be able to detect and track all interactable or relevant objects in the game 99% of the view time.
+- [ ] Must process faster than or equal to human perception (30 FPS).
+- [ ] No modifications can be made to the game platform or hosted device.
+- [ ] Must be deployable on an embedded GPU system.
 
 ## Plan of Action
 1. I'll be using an HDMI capture card to stream the live game feed to an external computer over USB 3.0.
