@@ -3,7 +3,7 @@
 ## Goal
 The goal of this subsystem is to perceive and understand the current game state in near real time. The input will be a video stream of the game. The output will be a game state matrix representing the current game state.
 
-## Success Critera
+## Success Criteria
 - [ ] Must take in live video stream from the game.
 - [ ] Must be able to detect and track all interactable or relevant objects in the game 99% of the view time.
 - [ ] Must process faster than or equal to human perception (30 FPS).
