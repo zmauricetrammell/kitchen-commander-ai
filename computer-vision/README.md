@@ -66,6 +66,11 @@ A pattern I'm seeing right off the bat is that the key things can be broken into
 2. Locations: a "location" cannot be moved by the character. It is a spot in the environment that has interactive significance. This includes the sink, the delivery window, cutting boards, burners, ovens, the trash can, and ingredient crates. Its a cool coincidence that locations cannot be walked through (so they dont need another special obstacle group). The significance of locations is that the character needs to be at them to perform a key action (get, chop, cook, etc).
 3. Miscellaneous: all other stuff, it doesnt have interactive value but it should be tracked because it may pose an obstacle. This is any fires, walls, holes, all that stuff.
 4. Icons: an "icon" tells the player useful information about the state of a resource or location. Examples are the "done" icon when an ingredient is fully cooked, a progress bar, or a "warning" icon when an ingredient is about to burn. I want to capture this so that eventually my agent can make creative decisions about the management of resources (maybe it will half cook things? Who knows).
+  
+I installed OBS Studio (from Steam) and set it up using all of the default settings and selecting to configure for recording over streaming. I set it to take the Overcooked game window as the video input steam. I'll also add it as the audio input stream (unsure if I'll need sound queues).
 
+<img width="1634" height="1124" alt="image" src="https://github.com/user-attachments/assets/42c6f051-3001-450d-86f7-19081cdff1f1" />
+
+This is all the setup I'll do today. Next I'll play the game, record my gameplay, and note the classes I encounter for my future annotation. 
 
 ## Reflection
