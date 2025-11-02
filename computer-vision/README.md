@@ -44,7 +44,7 @@ I also need to delineate all of the classes so that I know what I need to collec
 I need a lot of images to make a valuable dataset, the same icons in different contexts will diversify the training and create a better end result (apparently). I also need to make sure my model isnt stumped by anything within the game so I need an all inclusive dataset. I'll constrain it to one game area so I can make sure my approach works on a smaller set before trying to cover the whole game.
 
 - [ ] Must contain 100 images of each class.
-- [ ] List of classes mus cover every interactable item or obstacle in the game area.
+- [ ] List of classes must cover every interactable item or obstacle in the game area.
 - [ ] Must be pulled from the game (I wont use a pre-made data set).
 
 #### Plan of Action - Play the Game, Get the Data As Play
