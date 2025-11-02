@@ -38,7 +38,23 @@ I'll start with 100-200 images for each class. I'll pull them directly from the 
 #### Goal - Collect Images of Overcooked For An Image Dataset  
 I'll collect at least 100 images of each of the classes I want to detect.
 
-First, I need to delineate all of the classes so that I know what I need to collect images of. I'll make a classes.txt list of classes.
+I also need to delineate all of the classes so that I know what I need to collect images of. I'll make a classes.txt list of classes as I collect images.
+
+#### Success Criteria - The Right Images and Enough
+I need a lot of images to make a valuable dataset, the same icons in different contexts will diversify the training and create a better end result (apparently). I also need to make sure my model isnt stumped by anything within the game so I need an all inclusive dataset. I'll constrain it to one game area so I can make sure my approach works on a smaller set before trying to cover the whole game.
+
+- [ ] Must contain 100 images of each class.
+- [ ] List of classes mus cover every interactable item or obstacle in the game area.
+- [ ] Must be pulled from the game (I wont use a pre-made data set).
+
+#### Plan of Action - Play the Game, Get the Data As Play
+
+1. I downloaded Overcooked on Steam and installed it on my PC.
+2. I'll use a video recording tool to record my gameplay. I'll use OBS for this.
+3. I'll extract frames in post processing.
+4. As I play through the first cohesive game area, I'll add classes to "classes.txt" so I can annotate them later.
+
+#### Execution
 
 
 ## Reflection
