@@ -55,9 +55,17 @@ I need a lot of images to make a valuable dataset, the same icons in different c
 4. As I play through the first cohesive game area, I'll add classes to "classes.txt" so I can annotate them later.
 
 #### Execution
+
 Install went smoothly. Here we go...  
 <img width="700" height="433" alt="image" src="https://github.com/user-attachments/assets/fc0bad08-acd9-4518-8fa3-28b5c4f69af9" />
 
+**Classes**  
+
+A pattern I'm seeing right off the bat is that the key things can be broken into a few large groups:  
+1. Resources: I view a "resource" as anything that a character can interact with and pick up/relocate. This includes pots, ingredients (not the ingredient crates), plates, and the fire extinguisher. These things need to be managed and are a part of the environment that can be influenced by planning and action.
+2. Locations: a "location" cannot be moved by the character. It is a spot in the environment that has interactive significance. This includes the sink, the delivery window, cutting boards, burners, ovens, the trash can, and ingredient crates. Its a cool coincidence that locations cannot be walked through (so they dont need another special obstacle group). The significance of locations is that the character needs to be at them to perform a key action (get, chop, cook, etc).
+3. Miscellaneous: all other stuff, it doesnt have interactive value but it should be tracked because it may pose an obstacle. This is any fires, walls, holes, all that stuff.
+4. Icons: an "icon" tells the player useful information about the state of a resource or location. Examples are the "done" icon when an ingredient is fully cooked, a progress bar, or a "warning" icon when an ingredient is about to burn. I want to capture this so that eventually my agent can make creative decisions about the management of resources (maybe it will half cook things? Who knows).
 
 
 ## Reflection
