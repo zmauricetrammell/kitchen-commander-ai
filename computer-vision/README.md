@@ -55,6 +55,9 @@ I need a lot of images to make a valuable dataset, the same icons in different c
 4. As I play through the first cohesive game area, I'll add classes to "classes.txt" so I can annotate them later.
 
 #### Execution
+Install went smoothly. Here we go...  
+<img width="700" height="433" alt="image" src="https://github.com/user-attachments/assets/fc0bad08-acd9-4518-8fa3-28b5c4f69af9" />
+
 
 
 ## Reflection
