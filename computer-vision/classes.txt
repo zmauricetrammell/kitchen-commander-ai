@@ -1,1 +1,39 @@
+Player
+Pot
+Pan
+Fire_Extinguisher
+Plate
+Dirty Plate
 
+Beef
+Chopped Beef
+Chicken
+Fish
+Chopped Fish
+Shrimp
+Lettuce
+Chopped Lettuce
+Nori
+Tomato
+Chopped Tomato
+Cucumber
+Chopped Cucumber
+Onion
+Chopped Onion
+Potato
+Mushroom
+Rice
+Pasta
+Burger_Bun
+Pizza_Dough
+Tortilla
+
+Delivery_Window
+Trash
+Sink
+Cutting_Board
+Counter
+Burner
+Oven
+Hole
+Wall
