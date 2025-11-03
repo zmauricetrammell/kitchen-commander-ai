@@ -118,8 +118,10 @@ It runs on a locally hosted web server (localhost:8080).
 <img width="959" height="471" alt="image" src="https://github.com/user-attachments/assets/b2bb7b4b-b1ee-4e99-821e-cd3bd34bf68e" />  
 
 
-I added my 1000+ images as data for my new project and added the classes to my project
+I added my 1000+ images as data for my new project and added the classes to my project for labelling.
 
+Now time for the painstaking labelling of every class in 1500+ images...
+<img width="812" height="416" alt="image" src="https://github.com/user-attachments/assets/f5762b0f-20cc-417e-81cc-91e777aa74a7" />
 
 
 
