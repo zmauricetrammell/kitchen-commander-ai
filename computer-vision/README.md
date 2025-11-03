@@ -73,4 +73,42 @@ I installed OBS Studio (from Steam) and set it up using all of the default setti
 
 This is all the setup I'll do today. Next I'll play the game, record my gameplay, and note the classes I encounter for my future annotation. 
 
+### Log 02 November 2025
+My wife and I started playing the game again for video recordings. To scope my first attempt to be more manageable, I'm only working on the first game area (this will keep the background consistent and limit the classes needed). The Sashimi Area has a clean grey tile layout, no wall that obscure the kitchen, and clear orange counters.
+
+I'm continuing the goal of collecting images for the dataset.  
+Using my HDMI capture card to stream the video to my laptop where I recorded each level in OBS Studio, I have about 30 minutes of game footage.
+
+<img width="603" height="141" alt="image" src="https://github.com/user-attachments/assets/e9bed8bf-be76-42e5-bdcc-f62412e8cd3b" />
+
+Using "ffmpeg" (https://github.com/GyanD/FFmpeg.git), I'll convert the video into images. Initially I'll do this at 1/5 FPS to make sure the transitions between images are big enough to be worth training the computer vision model and not too minute to risk overfitting.
+
+StackOverflow and FFMPEG documentation gave me this:
+```
+ffmpeg -i input.mp4 -vf fps=1/5 out%d.png
+```
+It appears to take a while to run as it slowly takes screen shots. Can I run this in parallel?
+<img width="867" height="464" alt="image" src="https://github.com/user-attachments/assets/8363ade6-ab7f-4848-8569-52e733de996c" />
+
+I'm bracketing in the proper density of screenshots. I think 1 every 5 seconds is too low. Characters are flying across the screen and ingredients are magically being cut up. I'll need a higher FPS.
+
+<img width="1920" height="1080" alt="1-1-1_0013" src="https://github.com/user-attachments/assets/af41cc04-5dc1-41d4-aec0-f2ed25ffda62" />
+<img width="1920" height="1080" alt="1-1-1_0014" src="https://github.com/user-attachments/assets/9676ceee-d26c-4795-90eb-2f891885a836" />
+
+Next, I tried 1 every second or 1 FPS.  
+This looks better.
+<img width="1920" height="1080" alt="1-1-1_0124" src="https://github.com/user-attachments/assets/c111b326-9a47-4f09-9744-804b8b1ebcba" />
+<img width="1920" height="1080" alt="1-1-1_0125" src="https://github.com/user-attachments/assets/090f8e7e-61b7-4954-8018-b1448d3998a7" />
+  
+Now I've got over 1,000 images of gameplay. Success.
+<img width="1636" height="855" alt="image" src="https://github.com/user-attachments/assets/b091d7b4-5a1c-438d-90cb-efb3618588e2" />
+
+**Labelling The Dataset**  
+Now that I've got the images collected, I need to label them. This is the part where I box around the things I want the computer to detect and recognize and then label them. Its the answers to the test and the structure to the training. I'll give this labelled data to the model to train on and test with to create familiarity with the classes that are in the pictures.
+
+
+
+
+
+
 ## Reflection
