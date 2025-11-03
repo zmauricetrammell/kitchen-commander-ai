@@ -106,6 +106,19 @@ Now I've got over 1,000 images of gameplay. Success.
 **Labelling The Dataset**  
 Now that I've got the images collected, I need to label them. This is the part where I box around the things I want the computer to detect and recognize and then label them. Its the answers to the test and the structure to the training. I'll give this labelled data to the model to train on and test with to create familiarity with the classes that are in the pictures.
 
+To label the images, I'll be using the popular open source tool [Label Studio](https://labelstud.io/guide/get_started).
+
+```
+pip install label-studio
+
+label-studio start
+```
+It runs on a locally hosted web server (localhost:8080).
+  
+<img width="959" height="471" alt="image" src="https://github.com/user-attachments/assets/b2bb7b4b-b1ee-4e99-821e-cd3bd34bf68e" />  
+
+
+I added my 1000+ images as data for my new project and added the classes to my project
 
 
 
