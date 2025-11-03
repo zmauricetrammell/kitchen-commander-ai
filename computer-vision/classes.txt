@@ -3,17 +3,17 @@ Player2
 Pot
 Fire_Extinguisher
 Plate
-Dirty Plate
+Dirty_Plate
 
 Fish
-Chopped Fish
+Chopped_Fish
 Shrimp
-Chopped Shrimp
+Chopped_Shrimp
 Nori
 Cucumber
-Chopped Cucumber
+Chopped_Cucumber
 Rice
-Cooked Rice
+Cooked_Rice
 
 Delivery_Window
 Trash
