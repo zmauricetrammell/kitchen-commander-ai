@@ -1,32 +1,19 @@
-Player
+Player1
+Player2
 Pot
-Pan
 Fire_Extinguisher
 Plate
 Dirty Plate
 
-Beef
-Chopped Beef
-Chicken
 Fish
 Chopped Fish
 Shrimp
-Lettuce
-Chopped Lettuce
+Chopped Shrimp
 Nori
-Tomato
-Chopped Tomato
 Cucumber
 Chopped Cucumber
-Onion
-Chopped Onion
-Potato
-Mushroom
 Rice
-Pasta
-Burger_Bun
-Pizza_Dough
-Tortilla
+Cooked Rice
 
 Delivery_Window
 Trash
@@ -34,6 +21,4 @@ Sink
 Cutting_Board
 Counter
 Burner
-Oven
-Hole
 Wall
