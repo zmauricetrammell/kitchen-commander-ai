@@ -153,7 +153,7 @@ The whole point is simple: players take a resource to its destination!
   
 This simplifies the issue of what defines a distinct class: **an object that has a distinct corresponding location has a distinct class**
 
-This means that Dirty Plate and Clean Plate **must** be different classes. They must be recognized by the perception engine as separate classes that are distint, given that they must register with different locations. A Dirty Plate is a resource that is consumed at the Sink location to gain a Plate.  
+This means that Dirty Plate and Clean Plate **must** be different classes. They must be recognized by the perception engine as separate classes that are distinct, given that they must register with different locations. A Dirty Plate is a resource that is consumed at the Sink location to gain a Plate.  
 
 With this framework, here are my refined classes grouped by type:
   
