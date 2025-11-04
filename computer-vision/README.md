@@ -154,7 +154,9 @@ The whole point is simple: players take a resource to its destination!
 **Conceptualizing the Routing**
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/95b9f379-f7ee-4df0-9982-0880cc5721b9" />
   
-I imagine it in reverse, like a pulling chain. The goal pulls the plated fish sashimi, the plate station pulls the chopped fish, the cutting board pulls the fish. The fish crate pulls the player! The deterministic nature of each recipe makes the decision cycle simple and elegant.
+I imagine it in reverse, like a pulling chain. The goal pulls the plated fish sashimi, the plate station pulls the chopped fish, the cutting board pulls the fish. The fish crate pulls the player! The deterministic nature of each recipe makes the decision cycle simple and elegant.  
+
+Maybe I can weight the "needs" of each location to set the priorities in the game board for the strategic planner? This leaves room for a neural network to creatively develop intuition about what locations are actually "key terrain" and to adjust the weights of the locations accordingly....
   
 This simplifies the issue of what defines a distinct class: **an object that has a distinct corresponding location has a distinct class**
 
