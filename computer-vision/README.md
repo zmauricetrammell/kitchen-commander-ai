@@ -123,6 +123,75 @@ I added my 1000+ images as data for my new project and added the classes to my p
 Now time for the painstaking labelling of every class in 1500+ images...
 <img width="812" height="416" alt="image" src="https://github.com/user-attachments/assets/f5762b0f-20cc-417e-81cc-91e777aa74a7" />
 
+#### Log 03 November 2025
+
+As I was labelling, I focused on the question: *what does the agent need to recognize in this picture*? Specifically, I'm thinking about what states or resources the agent needs to be able to dstinguish as unique. I've developed a logical framework for how these can be organized:
+  
+**Players**  
+Players can be directly moved by the low level agents. Players are visually distinguishable by their colored rings.
+
+**Locations**  
+Locations are any spots that the players can interact with but _cannot move_.  
+Examples are the delivery window, the plate return, the sink, cutting board, trash, ingredient crates, counters, or burners.  
+These items have interactive value but cannot be moved by the players (so the agents need to move to them).
+  
+**Resources**  
+Resources are anything the players can pick up and move.   
+This includes the plates, pots, pans, any food ingredients, the fire extinguiser.  
+Resources need to be broken down and distinguished by where their corresponding destination is. A breakthrough in my conceptual understanding of the game is this:
+   
+**Resources Go To Locations**  
+The whole point is simple: players take a resource to its destination!  
+
+- Fish (R) (for sashimi must be cut) ---> Cutting Board (L)  = Cut Fish
+  UNCUT fish MUST go to the cutting board for sashimi. Its a many to 1 match but each resource only has one possible destination.
+- Shrimp (R) --------------> Cutting Board (L) = Cut Shrimp
+- Plate (R) ---------------> Counter (L) = Plate Station
+- Cut Shrimp(R) -----------> Plate Station (R) = Shrimp Sashimi
+- Shrimp Sashimi(R) -------> Delivery Window (L) = GOAL
+- Dirty Plate (R) ---------> Sink (L) = Plate 
+  
+This simplifies the issue of what defines a distinct class: **an object that has a distinct corresponding location has a distinct class**
+
+This means that Dirty Plate and Clean Plate **must** be different classes. They must be recognized by the perception engine as separate classes that are distint, given that they must register with different locations. A Dirty Plate is a resource that is consumed at the Sink location to gain a Plate.  
+
+With this framework, here are my refined classes grouped by type:
+  
+Player1
+Player2
+
+Delivery_Window
+Plating_Station
+Plate_Return
+Sink
+Counter
+Burner
+Cutting_Board
+Trash
+Fish_Crate
+Shrimp_Crate
+  
+Plate
+Dirty_Plate
+Fire_Extinguisher
+Pot
+Full_Pot
+Fish
+Chopped_Fish
+Shrimp
+Chopped_Shrimp
+Cucumber
+Chopped_Cucumber
+Rice
+Cooked_Rice
+Nori
+Fish_Sashimi
+Shrimp_Sashimi
+Fish_Sushi
+Veggie_Sushi
+
+
+
 
 
 
