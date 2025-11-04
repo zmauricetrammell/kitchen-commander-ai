@@ -151,6 +151,11 @@ The whole point is simple: players take a resource to its destination!
 - Shrimp Sashimi(R) -------> Delivery Window (L) = GOAL
 - Dirty Plate (R) ---------> Sink (L) = Plate 
   
+**Conceptualizing the Routing**
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/95b9f379-f7ee-4df0-9982-0880cc5721b9" />
+  
+I imagine it in reverse, like a pulling chain. The goal pulls the plated fish sashimi, the plate station pulls the chopped fish, the cutting board pulls the fish. The fish crate pulls the player! The deterministic nature of each recipe makes the decision cycle simple and elegant.
+  
 This simplifies the issue of what defines a distinct class: **an object that has a distinct corresponding location has a distinct class**
 
 This means that Dirty Plate and Clean Plate **must** be different classes. They must be recognized by the perception engine as separate classes that are distinct, given that they must register with different locations. A Dirty Plate is a resource that is consumed at the Sink location to gain a Plate.  
