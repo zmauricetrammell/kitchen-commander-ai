@@ -43,9 +43,9 @@ I also need to delineate all of the classes so that I know what I need to collec
 #### Success Criteria - The Right Images and Enough
 I need a lot of images to make a valuable dataset, the same icons in different contexts will diversify the training and create a better end result (apparently). I also need to make sure my model isnt stumped by anything within the game so I need an all inclusive dataset. I'll constrain it to one game area so I can make sure my approach works on a smaller set before trying to cover the whole game.
 
-- [ ] Must contain 100 images of each class.
-- [ ] List of classes must cover every interactable item or obstacle in the game area.
-- [ ] Must be pulled from the game (I wont use a pre-made data set).
+- [x] Must contain 100 images of each class.
+- [x] List of classes must cover every interactable item or obstacle in the game area.
+- [x] Must be pulled from the game (I wont use a pre-made data set).
 
 #### Plan of Action - Play the Game, Get the Data As Play
 
@@ -197,9 +197,22 @@ Shrimp_Sashimi
 Fish_Sushi
 Veggie_Sushi
 
+#### Log 04 November 2025  
 
+I've annotated 50 images (I know this is not enough) to do an initial test and learn about the finished product.  
 
+I'm leveraging this Google Colab Notebook from Edje Electronics [How to Train Yolo](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblJIeHdrb2tUMGRrTWlvcFo4SGdPb0ptTkFSZ3xBQ3Jtc0trb0xSWkZNZmQzS2gxTmZzZ0lETVVFSTg4OTlDeTFVQ2lJTGxCVDB4S2kyZUlrTWJYUWJ6SmpPd1ZlWHpRZjdsUDZWbV9hTUkwOUNwM01KVGM3a3M1NmpFN0tTTG5POGtSMTdDdm1lbjg4YVA0QUJUTQ&q=https%3A%2F%2Fcolab.research.google.com%2Fgithub%2FEdjeElectronics%2FTrain-and-Deploy-YOLO-Models%2Fblob%2Fmain%2FTrain_YOLO_Models.ipynb&v=r0RspiLG260)
 
+This notebook is a great starting point and make it very easy to train a custom model.
 
+Here is how YOLO11s performed on the video of 1-1-1 after being trained on its first few seconds frame at 1 FPS:
+
+<img width="855" height="437" alt="image" src="https://github.com/user-attachments/assets/bd9388b7-ea37-4316-aa0b-8aa55ea5d3e3" />
+  
+Initial evaluation: it's very accurate at finding the non-moving counters. It is also very good at tracking the players. It gets a bit sloppy when the players do complex movements or turn too quickly.
+
+This successfully demonstrates the computer vision preparation, training, and the quality of the end model.
+
+This proves that class detection from a vide stream is feasible. The dataset and model need work but this will largely be informed by the data structure that encodes the game state. I'll continue to work on this once I know what that looks like. For now I'll transition to working on the "game-tensor-board".
 
 ## Reflection
