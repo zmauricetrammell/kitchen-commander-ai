@@ -32,4 +32,7 @@ This article elegantly explains the background concepts for conceptualizing tens
 Starting from the simple shape of the map, it can be represented as a simple matrix (a 2-Dimensional tensor)  
 <img width="382" height="281" alt="image" src="https://github.com/user-attachments/assets/668ed2ed-477d-4b66-8a20-ea2611d9e9be" />
 
+```
 
+
+```
