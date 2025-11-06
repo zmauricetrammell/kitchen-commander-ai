@@ -25,7 +25,8 @@ I started researching "tensors" because I've seen them mentioned in AI decision 
 
 What something should be **seen** as will be derived by what it needs to be **tracked** as.  
 
-I found a very simple and informative reference (A Gentle Intro To Tensors With Examples)[https://wandb.ai/vincenttu/intro-to-tensors/reports/A-Gentle-Intro-To-Tensors-With-Examples--VmlldzozMTQ2MjE5#what-are-tensors-in-machine-learning?]  
+I found a very simple and informative reference [A Gentle Intro To Tensors With Examples](https://wandb.ai/vincenttu/intro-to-tensors/reports/A-Gentle-Intro-To-Tensors-With-Examples--VmlldzozMTQ2MjE5#what-are-tensors-in-machine-learning?)
+
 This article elegantly explains the background concepts for conceptualizing tensors, their dimensions, and how they are used in machine learning.  
   
 Starting from the simple shape of the map, it can be represented as a simple matrix (a 2-Dimensional tensor)  
