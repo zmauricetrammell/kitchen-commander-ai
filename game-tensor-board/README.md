@@ -29,10 +29,121 @@ I found a very simple and informative reference [A Gentle Intro To Tensors With 
 
 This article elegantly explains the background concepts for conceptualizing tensors, their dimensions, and how they are used in machine learning.  
   
-Starting from the simple shape of the map, it can be represented as a simple matrix (a 2-Dimensional tensor)  
-<img width="382" height="281" alt="image" src="https://github.com/user-attachments/assets/668ed2ed-477d-4b66-8a20-ea2611d9e9be" />
+Starting from the simple shape of the map, it can be represented as a simple matrix (a 2-Dimensional tensor)  of ASCII symbols.
+<img width="382" height="281" alt="image" src="https://github.com/user-attachments/assets/668ed2ed-477d-4b66-8a20-ea2611d9e9be" />  
+
+```
+# Each type of tile can be mapped to an ASCII character for human readability
+tile_legend = {'.':0, '=':1, '#':2, '*':3, '$':4, '+':5, '-':6, '0': 7, '1':8}
+
+#The "locations" on the board can be represented as a 2-D tensor of size W*H - this map is represented below
+state_map = [['=','=','#','#','#','=','=','+','$','$','='],
+             ['.','.','.','.','.','.','.','.','.','.','.'],
+             ['.','.','.','.','.','.','.','.','.','.','.'],
+             ['.','.','.','.','=','1','=','.','.','.','.'],
+             ['.','.','.','.','.','.','.','.','.','.','.'],
+             ['.','.','.','.','.','.','.','.','.','.','.'],
+             ['.','.','.','.','.','.','.','.','.','.','.'],
+             ['=','=','=','=','-','=','*','*','*','=','=']]
+
+H = 8
+W = 11
+```
+
+Next, when each ASCII value is broken out as a one-hot encoded vector for its individual attribute it is intuitively a stack of matrices with each one showing a "1" for the presence of a tile type and a "0" for the absense.
+  
+```
+# these are "walkable floor tiles"
+[[[0 0 0 0 0 0 0 0 0 0 0]
+  [1 1 1 1 1 1 1 1 1 1 1]
+  [1 1 1 1 1 1 1 1 1 1 1]
+  [1 1 1 1 0 0 0 1 1 1 1]
+  [1 1 1 1 1 1 1 1 1 1 1]
+  [1 1 1 1 1 1 1 1 1 1 1]
+  [1 1 1 1 1 1 1 1 1 1 1]
+  [0 0 0 0 0 0 0 0 0 0 0]]
+
+# these are "counter tiles"
+ [[1 1 0 0 0 1 1 0 0 0 1]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 1 0 1 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [1 1 1 1 0 1 0 0 0 1 1]]
+
+# these are "cutting boards"
+ [[0 0 1 1 1 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]]
+
+# these are "burners"
+ [[0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 1 1 1 0 0]]
+
+# this is the "delivery window"
+ [[0 0 0 0 0 0 0 0 1 1 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]]
+
+
+# this is the "plate return"
+ [[0 0 0 0 0 0 0 1 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]]
+
+# this is the "trash"
+ [[0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 1 0 0 0 0 0 0]]
+
+# this is the "shrimp crate" (notice is is non existent in this map)
+ [[0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]]
+
+# this is the "fish crate" 
+ [[0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 1 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]
+  [0 0 0 0 0 0 0 0 0 0 0]]]
 
 ```
 
-
-```
+This tensor stores the static tile locations and types for a single frame.
