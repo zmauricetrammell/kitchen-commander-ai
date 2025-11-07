@@ -7,13 +7,13 @@ location_legend = {'.':0, '=':1, '#':2, '*':3, '$':4, '+':5, '-':6, '0': 7, '1':
 
 #The "locations" on the board can be represented as a 2-D tensor of size W*H - this map is represented below
 location_map = [['=','=','#','#','#','=','=','+','$','$','='],
-             ['.','.','.','.','.','.','.','.','.','.','.'],
-             ['.','.','.','.','.','.','.','.','.','.','.'],
-             ['.','.','.','.','=','1','=','.','.','.','.'],
-             ['.','.','.','.','.','.','.','.','.','.','.'],
-             ['.','.','.','.','.','.','.','.','.','.','.'],
-             ['.','.','.','.','.','.','.','.','.','.','.'],
-             ['=','=','=','=','-','=','*','*','*','=','=']]
+                ['.','.','.','.','.','.','.','.','.','.','.'],
+                ['.','.','.','.','.','.','.','.','.','.','.'],
+                ['.','.','.','.','=','1','=','.','.','.','.'],
+                ['.','.','.','.','.','.','.','.','.','.','.'],
+                ['.','.','.','.','.','.','.','.','.','.','.'],
+                ['.','.','.','.','.','.','.','.','.','.','.'],
+                ['=','=','=','=','-','=','*','*','*','=','=']]
 
 H = 8
 W = 11
@@ -29,8 +29,8 @@ for r in range(H):
         cls = location_legend[location_map[r][c]]
         location_tensor[cls, r, c] = 1
 
-print('Location Tensor')
-print(location_tensor,'\n')
+# print('Location Tensor')
+# print(location_tensor,'\n')
 
 # Next, dynamic attributes "resources" can be added as attribute vectors to the 3d dimension
 """
@@ -65,11 +65,42 @@ for r in range(H):
         cls = resource_legend[resource_map[r][c]]
         resource_tensor[cls, r, c] = 1
 
-print('Resource Tensor')
-print(resource_tensor,'\n')
+# print('Resource Tensor')
+# print(resource_tensor,'\n')
+
+resource_tensor = np.delete(resource_tensor, 0, axis=0)  # remove channel 0
+
+# Lastly, I'll build a similar tensor of the player locations for 2 players
+
+"""
+No Player = '' = 0
+Player 1 (Blue) = "1" = 1
+Player 2 (Red) = "2" = 2
+"""
+
+player_legend = {'':0, '1':1, '2':2}
+C3 = len(player_legend)
+
+# Next, the ASCII map of the players in the frame (Just players 1 and 2)
+player_map = [['' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'1','' ,'' ,'' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'' ,'' ,'2','' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ],
+              ['' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ,'' ]]
+
+player_tensor = np.zeros((C3,H,W), dtype=np.int8) # this makes an all-0 tensor of the prescribed 3 dimensions
+for r in range(H):
+    for c in range(W):
+        cls = player_legend[player_map[r][c]]
+        player_tensor[cls, r, c] = 1
+
+player_tensor = np.delete(player_tensor, 0, axis=0)  # remove channel 0
 
 # Next, concatenate the two tensors to combine them in the channels axis
-state_tensor = np.concatenate((location_tensor,resource_tensor),axis = 0)
+state_tensor = np.concatenate((location_tensor,resource_tensor,player_tensor),axis = 0)
 
 # Temporarily show all elements
 np.set_printoptions(threshold=np.inf)
