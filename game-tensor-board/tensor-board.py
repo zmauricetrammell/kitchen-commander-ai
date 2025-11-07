@@ -67,3 +67,15 @@ for r in range(H):
 
 print('Resource Tensor')
 print(resource_tensor,'\n')
+
+# Next, concatenate the two tensors to combine them in the channels axis
+state_tensor = np.concatenate((location_tensor,resource_tensor),axis = 0)
+
+# Temporarily show all elements
+np.set_printoptions(threshold=np.inf)
+
+print('Combined State Tensor')
+print(state_tensor,'\n')
+
+# Temporarily show all elements
+np.set_printoptions(threshold=1000)
